@@ -1,0 +1,53 @@
+有關 使用者登入 
+json web tokens 為了最好的加密 至少要使用 32字符
+
+用戶如果想要刪除自己 一般不會把資料從資料庫刪除 只會設置為 非活動狀態
+
+ cookies => 服務器可以發送給客戶端的一小段文本
+ 當client 收到 cookies 時，它會自動儲存它 然後自動發回 在 它來自的服務器的所有請求之中
+
+
+ 想要發送cookies 基本上 就直接attach 在res 上
+
+
+ {
+    "name": "test test",
+    "email": "testtest@gmail.com",
+    "password": "pass1234",
+    "role": "admin",
+    "passwordConfirm": "pass1234"
+}
+
+{
+    "name": "test test2",
+    "email": "testtest2@gmail.com",
+    "password": "pass1234",
+    "role": "user",
+    "passwordConfirm": "pass1234"
+}
+
+        h1= tour
+        //- This is buffered code
+        h2= user.toUpperCase() 
+
+        //- This is unbuffered code
+        - const x = 9;
+        h2= 2 * x 
+
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'", 'google.com', 'youtube.com'],
+        styleSrc: ["'self'", 'google.com', 'youtube.com', "'unsafe-inline'"],
+        scriptSrc: ["'self'", 'google.com', 'youtube.com', "'unsafe-inline'"],
+        imgSrc: ["'self'", 'google.com', 'youtube.com', 'data:', 'blob:'],
+        connectSrc: ["'self'", 'google.com', 'youtube.com', 'ws:', 'wss:'],
+        frameSrc: ["'self'", 'google.com', 'youtube.com'],
+        frameAncestors: ["'self'", 'google.com', 'youtube.com'],
+        mediaSrc: ["'self'", 'google.com', 'youtube.com', 'data:', 'blob:'],
+      },
+    },
+    frameguard: { action: 'SAMEORIGIN' },
+  })
+);

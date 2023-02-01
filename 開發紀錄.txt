@@ -1,0 +1,10 @@
+2022年12月31日 
+    1.完成Tours Route， 可以進行資料處理
+    2.完成User Route, 尚未進行開發
+    3.完成 Route,Controller,app,server 的資料分離
+
+（後續目標計畫： 將todolistv2 的線路進行整理 按照課程的方式進行）
+
+2023年01月01日
+
+npm i eslint prettier eslint-config-prettier eslint-plugin-prettier eslint-config-airbnb eslint-plugin-node eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react --save-dev

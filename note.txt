@@ -1,0 +1,36 @@
+// 獲取 所有 tours 資料
+//app.get('/api/v1/tours', getAllTours);
+// 獲取 指定 tour 資料
+//app.get('/api/v1/tours/:id', getTour);
+// 新增 tour 資料
+//app.post('/api/v1/tours', createTour);
+// 更新 tour 資料
+//app.patch('/api/v1/tours/:id', updateTour);
+// 刪除 tour 資料
+//app.delete('/api/v1/tours/:id', deleteTour);
+
+
+
+const tourRouter = express.Router();
+const userRouter = express.Router();
+
+
+tourRouter.route('/').get(getAllTours).post(createTour);
+
+tourRouter
+  .route('/:id')
+  .get(getTour)
+  .patch(updateTour)
+  .delete(deleteTour);
+
+userRouter.route('/').get(getAllUsers).post(createUser);
+
+userRouter
+  .route('/:id')
+  .get(getUser)
+  .patch(updateUser)
+  .delete(deleteUser);
+
+
+  app.use('/api/v1/tours', tourRouter)
+  app.use('/api/v1/users', userRouter)
